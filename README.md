@@ -7,7 +7,7 @@
 https://www.ibm.com/support/producthub/icpdata/docs/content/SSQNUZ_latest/cpd/install/portworx-storage-classes.html
 
 #### DB2 RWX shared volumes for System Storage, backup storage, future load storage, and future diagnostic logs storage
-
+--
   cat <<EOF | oc create -f -
   allowVolumeExpansion: true
   apiVersion: storage.k8s.io/v1

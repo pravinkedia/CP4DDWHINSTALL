@@ -7,24 +7,24 @@
 https://www.ibm.com/support/producthub/icpdata/docs/content/SSQNUZ_latest/cpd/install/portworx-storage-classes.html
 
 #### DB2 RWX shared volumes for System Storage, backup storage, future load storage, and future diagnostic logs storage
---
-  cat <<EOF | oc create -f -
-  allowVolumeExpansion: true
-  apiVersion: storage.k8s.io/v1
-  kind: StorageClass
-  metadata:
-   name: portworx-db2-rwx-sc
-  parameters:
-   io_profile: cms
-   block_size: 4096b
-   nfs_v4: "true"
-   repl: "3"
-   sharedv4: "true"
-   priority_io: high
-  provisioner: kubernetes.io/portworx-volume
-  reclaimPolicy: Retain
-  volumeBindingMode: Immediate
-  EOF
+
+    cat <<EOF | oc create -f -
+    allowVolumeExpansion: true
+    apiVersion: storage.k8s.io/v1
+    kind: StorageClass
+    metadata:
+      name: portworx-db2-rwx-sc
+    parameters:
+      io_profile: cms
+      block_size: 4096b
+      nfs_v4: "true"
+      repl: "3"
+      sharedv4: "true"
+      priority_io: high
+      provisioner: kubernetes.io/portworx-volume
+      reclaimPolicy: Retain
+      volumeBindingMode: Immediate
+      EOF
 
 #### - Ready the node
 
